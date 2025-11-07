@@ -29,8 +29,9 @@ public class ItemController {
      * GET /api/items - Returns a list of items.
      */
     @GetMapping
-    public List<Item> getItems() {
-        return itemService.getAllItems();
+    public ResponseEntity<List<Item>> getItems() {
+        List<Item> items = itemService.getAllItems();
+        return ResponseEntity.ok(items);
     }
 
     /**
